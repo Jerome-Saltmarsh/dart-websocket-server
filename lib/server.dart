@@ -1,7 +1,9 @@
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
 
-void main() {
+void installWebSocketServer() {
+  print('starting web socket server');
+
   var handler = webSocketHandler((webSocket) {
     webSocket.stream.listen((message) {
       webSocket.sink.add("echo $message");
